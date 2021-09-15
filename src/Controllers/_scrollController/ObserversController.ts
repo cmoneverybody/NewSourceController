@@ -1,4 +1,4 @@
-import { Observer } from "./_otherMockedLibs";
+import { Observer } from "../../Observer";
 
 export interface ITriggersVisibility {
   top: boolean;
@@ -41,7 +41,11 @@ export class ObserversController {
     this._observersCallback = options.observersCallback;
 
     this._updateTriggers();
-    // add to here calc and recalc offset
+    this._updateTriggersOffset();
+  }
+
+  public updateTriggersOffset() {
+    this._updateTriggersOffset();
   }
 
   public setListContainer(newListContainer: HTMLElement) {
@@ -52,6 +56,14 @@ export class ObserversController {
   public setTriggersQuerySelector(newTriggersQuerySelector: string) {
     this._triggersQuerySelector = newTriggersQuerySelector;
     this._updateTriggers();
+  }
+
+  public getTriggersOffset(): ITriggersOffset {
+    return this._triggersOffset;
+  }
+
+  _updateTriggersOffset() {
+    // add code to calc triggers offset
   }
 
   _updateTriggers() {

@@ -1,4 +1,7 @@
 import { ScrollController } from "./Controllers/ScrollController";
+
+import type { IVirtualScrollCollection } from "./Collection";
+
 import type {
   TObserversCallback,
   TObserverPosition
@@ -38,10 +41,14 @@ export default class BaseControl {
       triggersQuerySelector: TRIGGERS_QUERY_SELECTOR,
       itemsQuerySelector: ITEMS_QUERY_SELECTOR,
       observersCallback: this._observersCallback,
+      segmentSize: 5,
       triggersVisibility: {
         top: false,
         bottom: false
-      }
+      },
+      collection: {
+        setIndexes: (start: number, stop: number) => {}
+      } as IVirtualScrollCollection
     });
   }
 
