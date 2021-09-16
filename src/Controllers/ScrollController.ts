@@ -130,6 +130,15 @@ export class ScrollController {
   }
 
   scrollToItem(key: string): Promise<void> {
+    const itemIndex = 0; // calc by key
+    if (this._calculator.isItemInVirtualRange(itemIndex)) {
+      //do scroll
+    } else {
+      this._calculator.updateRangeByIndex(
+        this._observersController.getTriggersOffset()
+      );
+      // do scroll async
+    }
     // вроде как можно реализовать через сохранение edgeItem и последующий вызов restoreScroll
     return Promise.resolve();
   }

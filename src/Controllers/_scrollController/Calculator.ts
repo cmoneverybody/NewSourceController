@@ -59,7 +59,7 @@ export class Calculator {
   }
 
   // Вместо canScrollToItem - вызывается в scrollController для проверки вхождения элемента в virtualRange
-  public isItemInRange(index: number): boolean {
+  public isItemInVirtualRange(index: number): boolean {
     // todo add code
     return true;
   }
